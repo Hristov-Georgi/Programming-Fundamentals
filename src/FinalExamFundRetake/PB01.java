@@ -1,4 +1,4 @@
-package FinalExamFundRetake;
+package finalExamFundRetake;
 
 import java.util.Scanner;
 

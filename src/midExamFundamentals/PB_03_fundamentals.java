@@ -9,30 +9,26 @@ public class PB_03_fundamentals {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-
         List<String> phonesInShopList = Arrays.stream(scanner.nextLine().split(", "))
                 .collect(Collectors.toList());
 
-
         String inputCommands = scanner.nextLine();
-        while(!inputCommands.equals("End")){
+        while (!inputCommands.equals("End")) {
 
             String[] commands = inputCommands.split(" - ");
 
-            switch (commands[0]){
+            switch (commands[0]) {
 
                 case "Add":
 
-                    if(!phonesInShopList.contains(commands[1])){
+                    if (!phonesInShopList.contains(commands[1])) {
                         phonesInShopList.add(commands[1]);
                     }
                     break;
 
                 case "Remove":
+                    phonesInShopList.remove(commands[1]);
 
-                    if(phonesInShopList.contains(commands[1])){
-                        phonesInShopList.remove(commands[1]);
-                    }
                     break;
 
                 case "Bonus phone":
@@ -41,14 +37,14 @@ public class PB_03_fundamentals {
                     String oldPhone = oldNewPhone[0];
                     String newPhone = oldNewPhone[1];
 
-                    if(phonesInShopList.contains(oldPhone)){
+                    if (phonesInShopList.contains(oldPhone)) {
                         int indexOldPhone = phonesInShopList.indexOf(oldPhone);
                         phonesInShopList.add(indexOldPhone + 1, newPhone);
                     }
                     break;
                 case "Last":
 
-                    if(phonesInShopList.contains(commands[1])){
+                    if (phonesInShopList.contains(commands[1])) {
                         phonesInShopList.remove(commands[1]);
                         phonesInShopList.add(commands[1]);
                     }
@@ -59,8 +55,6 @@ public class PB_03_fundamentals {
         }
 
         System.out.println(String.join(", ", phonesInShopList));
-
-
 
     }
 }

@@ -12,7 +12,6 @@ public class PB03 {
 
         Map<String, Integer> likesAndCommentsMap = new LinkedHashMap<>();
 
-
         while (!input.equals("Log out")){
 
             String command = input.split("\\:\\s+")[0];
@@ -57,9 +56,7 @@ public class PB03 {
                         System.out.printf("%s doesn't exist", username);
                     }
                     break;
-
             }
-
 
             input = scanner.nextLine();
         }
@@ -68,11 +65,8 @@ public class PB03 {
 
         System.out.printf("%d followers%n", followers);
 
-        likesAndCommentsMap.entrySet().forEach(entry -> {
-
-            System.out.printf("%n%s: %d%n", entry.getKey(), entry.getValue());
-        });
-
+        likesAndCommentsMap.entrySet().forEach(entry ->
+            System.out.printf("%n%s: %d%n", entry.getKey(), entry.getValue()));
 
     }
 }

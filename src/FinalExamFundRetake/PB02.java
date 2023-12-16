@@ -1,4 +1,4 @@
-package FinalExamFundRetake;
+package finalExamFundRetake;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -16,12 +16,12 @@ public class PB02 {
         Pattern pattern = Pattern.compile(regex);
 
 
-        for (int  i = 1;  i <= numberOfInputs ;  i++) {
+        for (int i = 1; i <= numberOfInputs; i++) {
             String inputInfo = scanner.nextLine();
 
             Matcher matcher = pattern.matcher(inputInfo);
 
-            if (matcher.find()){
+            if (matcher.find()) {
 
                 String tag = matcher.group("tag");
                 char firstLetter = matcher.group("firstLetter").charAt(0);
@@ -29,7 +29,6 @@ public class PB02 {
                 char thirdLetter = matcher.group("thirdLetter").charAt(0);
 
                 System.out.printf("%s: %d %d %d%n", tag, (int) firstLetter, (int) secondLetter, (int) thirdLetter);
-
 
             } else {
                 System.out.println("Valid message not found!");
